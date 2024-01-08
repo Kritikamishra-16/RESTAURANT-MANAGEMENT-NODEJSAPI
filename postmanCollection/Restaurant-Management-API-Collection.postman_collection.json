@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "f62d0527-cdab-41dd-859c-c7547a84e187",
+		"name": "Restaurant-Management-API-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24955691"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/v1/dish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth",
+						"value": "kritikasSecretKey",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "dishName",
+							"value": "Honey Chilli Potato",
+							"type": "text"
+						},
+						{
+							"key": "availableQuantity",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "pricePerItem",
+							"value": "350",
+							"type": "text"
+						},
+						{
+							"key": "dishType",
+							"value": "maincourse",
+							"type": "text"
+						},
+						{
+							"key": "servesPeople",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/dish",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"dish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/dish",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"value": "kritikasSecretKey",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/dish",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"dish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/dish/noodles",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "auth",
+						"value": "kritikasSecretKey",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/dish/noodles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"dish",
+						"noodles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/dish/pizza",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"value": "kritikasSecretKey",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/dish/pizza",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"dish",
+						"pizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/dish",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "auth",
+						"value": "kritikasSecretKey",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "dishName",
+							"value": "Matar Paneer",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "700",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/dish",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"dish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
