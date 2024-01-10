@@ -13,7 +13,7 @@ const create= async (req,res)=>{
         });
         
         console.log(response);
-        return res.status(201).json({
+        return res.status(200).json({
             message: "Successfully added a new dish",
             data: response,
             success:true,
@@ -34,7 +34,7 @@ const create= async (req,res)=>{
 const destroy= async (req,res)=>{
     try{
         const response= await dishService.destroy(req.params.dishName);
-        return res.status(201).json({
+        return res.status(200).json({
             message: "Successfully removed a dish",
             data: response,
             success:true,
@@ -44,7 +44,7 @@ const destroy= async (req,res)=>{
     }catch(error)
     {
         console.log(error);
-        return res.status(500).json({
+        return res.status(404).json({
             data:{},
             message:"Not able to delete dish",
             success: false,
@@ -56,7 +56,7 @@ const destroy= async (req,res)=>{
 const getAll= async (req,res)=>{
     try{
         const response= await dishService.getAll();
-        return res.status(201).json({
+        return res.status(200).json({
             message: "Successfully fetched all the dishes",
             data: response,
             success:true,
@@ -84,7 +84,7 @@ const update= async (req,res)=>{
         }
         const response= await dishService.update(dishData);
         console.log(response);
-        return res.status(201).json({
+        return res.status(200).json({
             message: "Successfully updated a dish",
             data: response,
             success:true,
@@ -105,7 +105,7 @@ const update= async (req,res)=>{
 const getByName= async (req,res)=>{
     try{
         const response= await dishService.get(req.params.dishName);
-        return res.status(201).json({
+        return res.status(200).json({
             message: "Successfully fetched a dish",
             data: response,
             success:true,
@@ -134,7 +134,7 @@ const purchase= async (req,res)=>{
         const newTotalAmount= parsedExistingAmount+ response.amountToBePaid;
         await redis.set('totalAmount', newTotalAmount);
 
-        return res.status(201).json({
+        return res.status(200).json({
             message: "Successfully purchased a dish",
             data: {
                 changeRs: response.change,
@@ -153,6 +153,7 @@ const purchase= async (req,res)=>{
             err:error
         });
     }finally{
+        
     }
 }
 

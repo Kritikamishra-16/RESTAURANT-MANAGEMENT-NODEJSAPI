@@ -187,6 +187,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/dish/purchase",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth",
+						"value": "kritikasSecretKey",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"amountPaid\":1000,\r\n    \"orderedDishesArray\":[\r\n        {\r\n            \"dishName\": \"pizza\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"dishName\": \"Blue Lagoon\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/dish/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"dish",
+						"purchase"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

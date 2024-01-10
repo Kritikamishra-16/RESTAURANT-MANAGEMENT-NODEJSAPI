@@ -9,20 +9,18 @@ const dishValidationSchema= Joi.object({
     servesPeople: Joi.number().min(1).required(),
 });
 
+
 const updatedishValidationSchema= Joi.object({
     dishName: Joi.string().required(),
     quantity: Joi.number().min(0).required(),
     price: Joi.number().min(1).required()
 });
 
-
-
 const validateUpdateDishData= (req,res,next)=>{
     const {error}= updatedishValidationSchema.validate(
         req.body,
         {abortEarly: false}
     );
-
     if(error){
         return res.status(400).json({
             success: false,
@@ -86,10 +84,19 @@ const validateAuth= (req,res,next)=>{
     next();
 }
 
+const invalidApiCheck=(req,res)=>{
+    return res.status(404).json({
+        data:{},
+        message:"Invalid API/ Unable to find requested resource",
+        success: false,
+    });
+}
+
 module.exports= {
     validateDishData,
     validateUpdateDishData,
     validatePurchaseApiRequest,
-    validateAuth
+    validateAuth,
+    invalidApiCheck
 }
 
