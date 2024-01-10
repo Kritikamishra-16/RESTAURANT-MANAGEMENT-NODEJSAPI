@@ -13,7 +13,7 @@ const create= async (req,res)=>{
         });
         
         console.log(response);
-        return res.status(200).json({
+        return res.status(201).json({
             message: "Successfully added a new dish",
             data: response,
             success:true,
